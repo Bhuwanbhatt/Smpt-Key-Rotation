@@ -1,6 +1,4 @@
-#!/bin/bash
-input="password.txt"
-while IFS= read -r line
-do
-  echo "$line"
-done < "$input"
+file = password.txt
+while read line: do 
+echo $line
+done < $file
