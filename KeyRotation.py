@@ -31,7 +31,7 @@ iam = boto3.client('iam')
 userlist = ["bhuwan"]
 
 
-def file_write(path,  Password,AccessKey):
+def file_write(Password,AccessKey):
     f = open("password.txt","w+")
     f.write("%s\n%s\n" % (Password, AccessKey))
     f.close
@@ -53,7 +53,8 @@ try:
                     secret_key = (create_key["AccessKey"].get("SecretAccessKey"))
                     covertPassword = calculateKey(secret_key,"us-east-1")
 
-                    file_write(path=("%s.csv" % file), Password=covertPassword, AccessKey=access_key_id)
+#                    file_write(path=("%s.csv" % file), Password=covertPassword, AccessKey=access_key_id)
+                    file_write(Password=covertPassword, AccessKey=access_key_id)
                 else:
                     print("%s with %s id already %s " %(user_name,access_key_id,status))
 except IndexError as err:
