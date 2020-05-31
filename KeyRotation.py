@@ -33,8 +33,12 @@ userlist = ["bhuwan"]
 
 def file_write(Password,AccessKey):
     f = open("password.txt","w+")
-    f.write("%s\n%s\n" % (Password, AccessKey))
+    f.write("%s" % (Password))
     f.close
+    accessKey=open("accesskey.txt","w+")
+    accessKey.write("%s" %(AccessKey))
+    accessKey.close
+
 
 
 try:
