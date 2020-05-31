@@ -3,6 +3,8 @@ import hmac
 import hashlib
 import base64
 import csv
+import botocore.exceptions
+
 
 # Values that are required to calculate the signature. These values should
 # never change.
